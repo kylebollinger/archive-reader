@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\BooksController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::controller(BooksController::class)->group(function () {
+    Route::get('/', 'index')->name('books');
+    Route::get('/search', 'search')->name('search');
+    Route::post('/search{keyword?}', 'search')->name('search');
+    Route::get('library/{slug}', 'slugRouter')->name('library.slug.router');
+    Route::get('/books/index/{letter}', 'alphabeticalIndex')->name('books.alphabetical.index');
 });
