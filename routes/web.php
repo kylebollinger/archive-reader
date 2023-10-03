@@ -22,4 +22,5 @@ Route::controller(BooksController::class)->group(function () {
     Route::get('books/category/{slug}', 'categoryIndex')->name('books.category.index');
     Route::get('/books/index/{letter}', 'alphabeticalIndex')->name('books.alphabetical.index');
     Route::get('/books/reader/{slug}', 'reader')->name('books.reader');
+    Route::post('/load-chapter', 'fetchChapter')->name('fetch.chapter');
 });

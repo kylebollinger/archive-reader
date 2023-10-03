@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 
 use App\Models\Book;
+use App\Models\Chapter;
 use App\Models\BookCategory;
 use Spatie\Searchable\Search;
 use Spatie\Searchable\ModelSearchAspect;
@@ -58,5 +59,30 @@ class BooksController extends BaseController
         } else {
             return redirect()->route('books.index');
         }
+    }
+
+    public function reader(Request $request)
+    {
+        $book = Book::state('completed')->firstWhere('slug', $request->slug);
+        if ($book) {
+            $valid_chapter = in_array(intval($request->chapter), $book->chapters_list()->pluck('id')->toArray());
+            $current_chapter = $valid_chapter ? $book->chapters_list()->where('id', $request->chapter)->first() : $book->chapters_list()->first();
+            $contents = $book->volumes_with_chapters;
+            return view('books.reader', compact('book', 'contents', 'current_chapter'));
+        } else {
+            // TODO Make a 404 page with search
+            return redirect()->route('books');
+        }
+    }
+
+    public function fetchChapter(Request $request)
+    {
+        $response = ['status' => 406, 'message' => 'Invalid parameters'];
+        if ($request && !empty($request->chapter_id)) {
+            $chapter = Chapter::find($request->chapter_id);
+            $view = view('books.reader.content', compact('chapter'))->render();
+            $response = ['status' => 201, 'html' => $view];
+        }
+        return response()->json($response, $response['status']);
     }
 }
