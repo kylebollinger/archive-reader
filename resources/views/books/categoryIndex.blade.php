@@ -12,6 +12,9 @@
         @endforeach
       </div>
     </section>
+    <div class="col-md-12">
+      {{ $books->links('vendor.pagination.default') }}
+    </div>
   </div>
 </section>
 

@@ -1,0 +1,57 @@
+// ======================================
+// Components || Pagination
+// ======================================
+
+// <nav> Container
+.paginator {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border-top: 1px solid $gray-200;
+  padding-top: 23px;
+  margin-top: 24px;
+
+  ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    li > a {
+      margin: 0 2px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      color: $gray-700;
+      transition: background-color ease-in-out 0.2s;
+
+      &:hover { background-color: $gray-100; }
+
+      &.active {
+        color: $white;
+        background-color: $gray-700;
+        pointer-events: none;
+        cursor: default;
+
+        &:hover { background-color: $gray-700; }
+      }
+    }
+
+    li.disabled { display: flex; align-items: center; }
+  }
+
+  @include media-breakpoint-down(sm) {
+    .paginator--info { display: flex; }
+    .paginator--links { display: none; }
+  }
+
+  @include media-breakpoint-up(sm) {
+    .paginator--info { display: none; }
+    .paginator--links { display: flex; }
+  }
+}
