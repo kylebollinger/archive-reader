@@ -78,7 +78,8 @@ class Book extends Model implements Searchable
 
     public function cover_art() {
         $url_key = isset($this->import_data['web_url']) ? Str::beforeLast($this->import_data['web_url'], '/') : null;
-        return isset($this->cover) && $url_key ? "$url_key/$this->cover" : null;
+        $cover = empty($this->cover) ? null : $this->cover;
+        return ($cover && $url_key) ? "$url_key/$this->cover" : null;
     }
 
     public function chapters_list() {
