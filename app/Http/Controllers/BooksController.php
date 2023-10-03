@@ -38,4 +38,15 @@ class BooksController extends BaseController
             return redirect()->route('books')->with('error', 'Invalid Search Query');
         }
     }
+
+    public function categoryIndex(Request $request)
+    {
+        $category = BookCategory::firstWhere('slug', $request->slug);
+        if (isset($category->id) && count($category->books) > 1) {
+            $books = Book::where('category_id', $category->id)->state('completed')->paginate(12);
+            return view('books.categoryIndex', compact('category', 'books'));
+        } else {
+            return redirect()->route('books.index')->with('error', 'Unable to find that category');
+        }
+    }
 }
