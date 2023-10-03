@@ -15,7 +15,6 @@ class BooksController extends BaseController
     {
         $books = Book::state('completed')
                         ->where('cover', '!=', '')
-                        ->orwhere('cover', '!=', null)
                         ->inRandomOrder()->take(32)->get();
         $categories = BookCategory::all()->where('book_count', '>=', 10);
         $abc_indicies = BookCategory::alphabetical_indicies();
