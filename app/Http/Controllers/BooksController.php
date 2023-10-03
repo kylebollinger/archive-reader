@@ -49,4 +49,14 @@ class BooksController extends BaseController
             return redirect()->route('books.index')->with('error', 'Unable to find that category');
         }
     }
+
+    public function alphabeticalIndex($letter)
+    {
+        if (!empty($letter) && preg_match("/^[a-z]{0,1}$/", $letter) == 1) {
+            $books = Book::where("title", "ILIKE", "$letter%")->state('completed')->paginate(24);
+            return view('books.alphabeticalIndex', compact('books', 'letter'));
+        } else {
+            return redirect()->route('books.index');
+        }
+    }
 }
