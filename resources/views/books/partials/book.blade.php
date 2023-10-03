@@ -1,6 +1,6 @@
 <div class="grid-item grid-item--book">
   <div class="inner-wrap book">
-    <a class="stretch-link" href="{{ route('library.slug.router', $book->slug) }}"></a>
+    <a class="stretch-link" href="{{ route('books.reader', $book->slug) }}"></a>
     @if ($book->cover_art())
       <figure class="cover-art" style='background-image: url("{{$book->cover_art()}}")'></figure>
     @else
