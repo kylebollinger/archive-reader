@@ -188,3 +188,41 @@ a {
   align-items: center;
   justify-content: center;
 }
+
+.button--group {
+  position: relative;
+  display: inline-flex;
+  vertical-align: middle;
+
+  .button {
+    position: relative;
+    flex: 1 1 auto;
+
+    &:not(:last-child) {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+
+  & > .button:nth-child(n+3),
+  & > :not(.button--check) + .button,
+  & > .button--group:not(:first-child) > .button {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  & > :not(.button--check:first-child) + .button,
+  & > .button--group:not(:first-child) { margin-left: -1px; }
+}
+
+.button--check {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  pointer-events: none;
+
+  &:checked + .button {
+    color: $white;
+    background-color: $rose-500;
+    border-color: $rose-500;
+  }
+}
