@@ -3,6 +3,7 @@
 
 @push('body-class', 'reader')
 @push('head_scripts')
+<script src="{{ asset('js/reader.js') }}" defer></script>
 <script>
 let urlHash = {
   fetchChapter: "{{ route('fetch.chapter') }}",
