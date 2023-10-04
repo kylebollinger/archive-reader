@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
-    @include('layout.head')
+    @include('layouts.head')
     <link rel="stylesheet" type="text/css" href="{{url('/dist/css/main.css')}}">
     @stack('head_scripts')
     @stack('styles')
