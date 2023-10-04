@@ -1,0 +1,73 @@
+
+html[theme="dark"] {
+  body {
+    background-color: var(--dark-theme-primary-bg);
+    color: var(--dark-theme-primary-text);
+  }
+
+  #readerNav {
+    background-color: rgba(0, 0, 0, 0.85);
+    box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 5%), inset 0 -1px 0 rgb(0 0 0 / 15%);
+
+    .header--button {
+      border-color: transparent;
+      background-color: transparent;
+
+      svg > path { stroke: var(--dark-theme-primary-text); }
+      &:hover {
+        background-color: rgba(255,255,255, 0.25);
+      }
+    }
+  }
+
+  .offcanvas-backdrop { background-color: $white; }
+  .offcanvas { background-color: $black; }
+  @include media-breakpoint-up(lg) {
+    #readerSidebar { background-color: transparent; }
+  }
+  .readerPageLink {
+    color: var(--dark-theme-primary-text);
+
+    &:hover span { color: var(--dark-theme-secondary-text); }
+    &::after {
+      background: url-svg("<svg fill='none' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='m6 9 6 6 6-6' stroke='#fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+    }
+  }
+  #readerSidebar .readerNavLink {
+    color: var(--dark-theme-primary-text);
+    &:hover { color: var(--dark-theme-primary); }
+    &.active { color: var(--dark-theme-primary); }
+  }
+  .expander .expander--button {
+    color: var(--dark-theme-primary-text);
+    &:hover { background-color: $gray-800; }
+
+    &::before {
+      background: url-svg("<svg fill='none' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='m6 9 6 6 6-6' stroke='#fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+    }
+  }
+
+  .btn-close {
+    background: transparent url-svg("<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#FFF'><path d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/></svg>") center/1em auto no-repeat;
+  }
+
+  .reader .settingsMenu .form-check-input:checked {
+    background-color: var(--dark-theme-primary);
+    border-color: var(--dark-theme-primary);
+  }
+
+  .button--check:checked + .button {
+    background-color: var(--dark-theme-primary);
+    border-color: var(--dark-theme-primary);
+  }
+  .button--outline-primary {
+    border-color: var(--dark-theme-primary);
+    color: var(--dark-theme-primary);
+    &:hover { background-color: var(--dark-theme-primary); color: $white; }
+  }
+
+  .button.button--primary {
+    background-color: var(--dark-theme-primary);
+    &:hover { background-color: $rose-400; }
+  }
+}
