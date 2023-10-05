@@ -1,6 +1,15 @@
 body {
   -webkit-font-smoothing: antialiased;
-  color: $gray-900;
+
+  @include light {
+    background-color: white;
+    color: $gray-900;
+  }
+
+  @include dark {
+    background-color: black;
+    color: white;
+  }
 }
 
 .fw-300 { font-weight: 300 !important; }
