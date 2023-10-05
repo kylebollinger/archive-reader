@@ -3,9 +3,9 @@
 <head>
     @include('layouts.head')
     <link rel="stylesheet" type="text/css" href="{{url('/dist/css/main.css')}}">
-    @stack('head_scripts')
     @stack('styles')
     <script type="text/javascript" src="{{url('/dist/js/app.js')}}" defer></script>
+    @stack('head_scripts')
 </head>
 
 <body class="@stack('body-class')">

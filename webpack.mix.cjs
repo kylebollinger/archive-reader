@@ -1,4 +1,4 @@
-const mix = require("laravel-mix");
+const mix = require("laravel-mix")
 
 /*
  |--------------------------------------------------------------------------
@@ -14,4 +14,5 @@ const mix = require("laravel-mix");
 mix
   .js("resources/js/app.js", "dist/js")
   .js("resources/js/reader.js", "dist/js")
-  .sass('resources/sass/main.scss', 'dist/css');
+  .js("resources/js/theme.js", "dist/js")
+  .sass('resources/sass/main.scss', 'dist/css')
