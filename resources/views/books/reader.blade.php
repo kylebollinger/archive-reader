@@ -15,7 +15,7 @@ if (localStorage.readerTheme) document.documentElement.setAttribute('theme', loc
 @section('content')
 @include('books.reader.navbar')
 
-<div id="readerWrap" class="container-fluid">
+<div id="readerWrap" class="container-xxl">
   <aside id="readerSidebar" class="offcanvas offcanvas-bottom">
     @include('books.reader.sidebar', ['book' => $book, 'contents' => $contents, 'current_chapter' => $current_chapter])
   </aside>
