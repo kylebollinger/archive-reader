@@ -1,0 +1,31 @@
+// ======================================
+// Sections || Header
+// ======================================
+
+
+.header.header--global {
+  background-color: $white;
+  border-bottom: 2px solid $gray-100;
+
+  nav {
+    justify-content: space-between;
+  }
+
+  // Infinity Logo
+  .logo {
+    transition: .2s ease-in-out transform;
+    svg { height: 28px; width: auto; }
+    svg > path { fill: $gray-700; }
+
+    &:hover {
+      transform: scale(1.01);
+      svg > path { fill: $gray-900; }
+    }
+  }
+}
+
+.header.header--sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  z-index: 999;
+}

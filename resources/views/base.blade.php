@@ -9,7 +9,7 @@
 </head>
 
 <body class="@stack('body-class')">
-    {{-- @include('layouts.header') --}}
+    @include('layouts.header')
     <main>
         @yield('content')
     </main>
