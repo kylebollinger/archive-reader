@@ -13,7 +13,6 @@ if (localStorage.readerTheme) document.documentElement.setAttribute('theme', loc
 @endpush
 
 @section('content')
-
 @include('books.reader.navbar')
 
 <div id="readerWrap" class="container-fluid">
@@ -33,6 +32,5 @@ if (localStorage.readerTheme) document.documentElement.setAttribute('theme', loc
           ></span>
   </section>
 </div>
-
 
 @stop
