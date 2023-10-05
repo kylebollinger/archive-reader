@@ -99,3 +99,14 @@ body.reader .header.header--global {
     }
   }
 }
+
+.header--reader .header--button {
+  @include dark {
+    svg {
+      filter: invert(1) grayscale(100%) brightness(80%);
+    }
+    &:hover svg {
+      filter: invert(1) grayscale(100%) brightness(30%);
+    }
+  }
+}

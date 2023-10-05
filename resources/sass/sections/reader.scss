@@ -90,8 +90,8 @@ body.reader .footer-main { margin-top: 3rem; }
     }
 
     @include dark {
-      color: $gray-700;
-      &:hover { color: $gray-900; }
+      color: $gray-500;
+      &:hover { color: $gray-300; }
       &.active { color: $rose-300; }
       &.active:before { background-color: $rose-300; }
       &.active:hover { color: $rose-300; }
@@ -146,6 +146,27 @@ body.reader .footer-main { margin-top: 3rem; }
     transform: translateY(100%);
   }
 }
+
+// Offcanvas Navs
+.offcanvas-backdrop {
+  @include light { background-color: $black; }
+  @include dark { background-color: $white; }
+}
+
+.offcanvas {
+  @include light { background-color: $white; }
+  @include dark {
+    background-color: $black;
+    .offcanvas-title { color: $gray-500; }
+    .offcanvas-body { color: $gray-200; }
+    .btn-close { filter: invert(1); }
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  // #readerSidebar { background-color: transparent; }
+}
+
 .reader .offcanvas-backdrop.show { opacity: .2; }
 
 
@@ -168,7 +189,7 @@ body.reader .footer-main { margin-top: 3rem; }
 #readerMain[data-reader-width="large"] .reader--pagination { max-width: 860px; }
 
 
-#readerWrap { margin: 1.5rem 0; }
+#readerWrap { margin: 1.5rem auto; }
 
 @include media-breakpoint-down(lg) {
   .offcanvas .sidebar--wrap { overflow-y: scroll; }
@@ -193,7 +214,6 @@ body.reader .footer-main { margin-top: 3rem; }
   overflow-anchor: none;
   text-align: left;
   font-weight: 600;
-  color: $gray-700;
   box-shadow: none;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
 
@@ -201,11 +221,24 @@ body.reader .footer-main { margin-top: 3rem; }
     @extend .chevron--icon;
     margin-right: 0.25rem;
     transition: transform 0.35s ease;
+
+    @include dark {
+      filter: invert(1) grayscale(100%) brightness(50%);
+    }
   }
 
   &[aria-expanded="true"]::before { transform: rotate(0deg); }
   &[aria-expanded="false"]::before { transform: rotate(-90deg); }
-  &:hover { background-color: $rose-50; }
+
+  @include light {
+    color: $gray-700;
+    &:hover { background-color: $rose-100; }
+  }
+
+  @include dark {
+    color: $gray-500;
+    &:hover { background-color: $rose-100; color: $gray-700; }
+  }
 }
 
 .expander .expander--link {
@@ -229,7 +262,6 @@ body.reader .footer-main { margin-top: 3rem; }
     display: flex;
     flex-direction: column;
     padding: 0.75rem 1.75rem;
-    color: $gray-600;
     transition: 0.2s ease-in-out transform;
 
     span {
@@ -241,13 +273,29 @@ body.reader .footer-main { margin-top: 3rem; }
     }
 
     &:hover { transform: scale(1.01); }
-    &:hover span { color: $gray-900; }
+
+    @include light {
+      color: $gray-600;
+      &:hover span { color: $gray-900; }
+    }
+    @include dark {
+      color: $gray-500;
+      &::after {
+        filter: invert(1) grayscale(100%) brightness(50%);
+      }
+      &:hover {
+        filter: brightness(90%);
+        // &::after { filter: invert(1) grayscale(100%) brightness(70%); }
+      }
+    }
   }
   .readerPageLink::after {
     @extend .chevron--icon;
     width: 32px;
     height: 32px;
     position: absolute;
+
+    @include dark { color: $gray-600; }
   }
   .readerPageLink.next::after {
     transform: rotate(-90deg);
@@ -263,4 +311,9 @@ body.reader .footer-main { margin-top: 3rem; }
   @include media-breakpoint-down(sm) {
     .readerPageLink span + span { display: none;}
   }
+}
+
+font[color="green"] {
+  @include light { color: $rose-500 !important; }
+  @include dark { color: $rose-300 !important; }
 }
