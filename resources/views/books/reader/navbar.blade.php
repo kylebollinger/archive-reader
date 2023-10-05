@@ -1,4 +1,4 @@
-<header id="readerNav" class="header header--sticky">
+<header id="readerNav" class="header header--reader header--sticky">
   <nav class="container-xxl">
     <div>
       <button class="header--button mobile button button--icon button--outline-secondary button--round p-2"
