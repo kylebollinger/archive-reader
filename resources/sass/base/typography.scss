@@ -3,7 +3,7 @@ body {
 
   @include light {
     background-color: white;
-    color: $gray-900;
+    color: $gray-950;
   }
 
   @include dark {
