@@ -142,19 +142,37 @@ a {
 }
 
 .button--outline-secondary {
-  border: 2px solid $gray-300;
-  color: $gray-700;
-  background-color: $white;
-
-  &:hover,
-  &:focus {
-    color: $gray-900;
-    background-color: $gray-50;
+  @include light {
     border: 2px solid $gray-300;
+    color: $gray-700;
+    background-color: $white;
+
+    &:hover,
+    &:focus {
+      color: $gray-900;
+      background-color: $gray-50;
+      border: 2px solid $gray-300;
+    }
+
+    &:disabled,
+    &.disabled { color: $gray-300; background-color: $gray-50; }
   }
 
-  &:disabled,
-  &.disabled { color: $gray-300; background-color: $gray-50; }
+  @include dark {
+    border: 2px solid $gray-800;
+    color: $gray-300;
+    background-color: $gray-700;
+
+    &:hover,
+    &:focus {
+      color: $gray-950;
+      background-color: $gray-500;
+      border: 2px solid $gray-500;
+    }
+
+    &:disabled,
+    &.disabled { color: $gray-600; background-color: $gray-800; }
+  }
 }
 
 .button--outline-gray {
