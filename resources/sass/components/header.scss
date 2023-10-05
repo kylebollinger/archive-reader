@@ -3,7 +3,7 @@
 // ======================================
 
 
-.header.header--global {
+.header {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 
@@ -21,27 +21,25 @@
     padding-bottom: 12px;
     padding-top: 12px;
     display: flex ;
+    align-content: center;
     justify-content: space-between;
   }
+}
 
   // Infinity Logo
-  .logo {
-    transition: .2s ease-in-out transform;
-    svg { height: 28px; width: auto; }
-
-    &:hover {
-      transform: scale(1.01);
-    }
-  }
+.header.header--global .logo {
+  transition: .2s ease-in-out transform;
+  svg { height: 28px; width: auto; }
+  &:hover { transform: scale(1.01); }
 
   @include light {
-    .logo svg > path { fill: $gray-700; }
-    .logo:hover { svg > path { fill: $gray-900; }}
+    svg > path { fill: $gray-700; }
+    &:hover { svg > path { fill: $gray-900; }}
   }
 
   @include dark {
-    .logo svg > path { fill: $gray-500; }
-    .logo:hover { svg > path { fill: $gray-300; }}
+    svg > path { fill: $gray-500; }
+    &:hover { svg > path { fill: $gray-300; }}
   }
 }
 
@@ -49,4 +47,11 @@
   position: -webkit-sticky;
   position: sticky;
   z-index: 999;
+  top: 0;
+}
+
+body.reader .header.header--global {
+  position: relative;
+  z-index: initial;
+  top: initial;
 }

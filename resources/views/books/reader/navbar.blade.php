@@ -1,5 +1,5 @@
-<nav id="readerNav" class="header header--sticky py-2">
-  <div class="d-flex align-content-center justify-content-between px-4">
+<header id="readerNav" class="header header--sticky">
+  <nav class="container-xxl">
     <div>
       <button class="header--button mobile button button--icon button--outline-secondary button--round p-2"
               type="button"
@@ -34,5 +34,5 @@
         </div>
       </aside>
     </div>
-  </div>
-</nav>
+  </nav>
+</header>
