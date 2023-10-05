@@ -9,14 +9,20 @@
   display: flex;
 
   input {
-    color: $gray-900;
+    color: $gray-950;
+    font-weight: 700;
     width: 100%;
     height: 44px;
-    border-radius: 8px;
-    border: 2px solid $gray-300;
+    border: 0;
+    border-color: transparent;
     padding: 0 40px;
     background: url-svg("<svg width='24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='m21 21-4.4-4.4M19 11a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z' stroke='#CDD5DF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>") no-repeat left 8px center / 24px auto;
-    background-color: #fff;
+    background-color: rgba($gray-500, .85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    &:focus,
+    &:focus-visible { outline: 0; }
   }
 
   button.cancel {
@@ -47,9 +53,4 @@
   input:-ms-input-placeholder { color: $gray-300; }
   input::-ms-input-placeholder { color: $gray-300; }
   input::placeholder { color: $gray-300; }
-
-  input:focus,
-  input.borderAdd {
-    border: 2px solid $gray-500;
-  }
 }
