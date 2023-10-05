@@ -4,10 +4,23 @@
 
 
 .header.header--global {
-  background-color: $white;
-  border-bottom: 2px solid $gray-100;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  @include light {
+    background-color: rgba($white, .9);
+    border-bottom: 2px solid $gray-100;
+  }
+
+  @include dark {
+    background-color: rgba($gray-950, .9);
+    border-bottom: 2px solid $gray-900;
+  }
 
   nav {
+    padding-bottom: 12px;
+    padding-top: 12px;
+    display: flex ;
     justify-content: space-between;
   }
 
@@ -15,12 +28,20 @@
   .logo {
     transition: .2s ease-in-out transform;
     svg { height: 28px; width: auto; }
-    svg > path { fill: $gray-700; }
 
     &:hover {
       transform: scale(1.01);
-      svg > path { fill: $gray-900; }
     }
+  }
+
+  @include light {
+    .logo svg > path { fill: $gray-700; }
+    .logo:hover { svg > path { fill: $gray-900; }}
+  }
+
+  @include dark {
+    .logo svg > path { fill: $gray-500; }
+    .logo:hover { svg > path { fill: $gray-300; }}
   }
 }
 

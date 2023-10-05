@@ -1,4 +1,4 @@
-<header class="header header--global navbar sticky-top">
+<header class="header header--global sticky-top">
   <nav class="container-xxl" aria-label="Main navigation">
     <a class="logo" href="/" aria-label="Archive Reader">
       @include('partials.logo')
