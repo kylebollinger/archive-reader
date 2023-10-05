@@ -18,10 +18,4 @@
       <label class="form-check-label" for="readerMode">Continuous Text</label>
     </div>
   </div>
-  <div class="input-group switch">
-    <div class="form-check form-switch switch-wrap">
-      <input class="form-check-input" type="checkbox" id="readerTheme">
-      <label class="form-check-label" for="readerTheme">Dark Mode</label>
-    </div>
-  </div>
 </div>

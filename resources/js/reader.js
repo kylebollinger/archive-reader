@@ -7,7 +7,6 @@ bookID = document.querySelector("#readerData").dataset.book;
 chapterID = document.querySelector("#readerData").dataset.currentChapter;
 let readerWidthRadios = document.querySelectorAll('input[type=radio][name="readerWidth"]');
 let readerModeCheck = document.querySelector('input[type=checkbox]#readerMode');
-let readerThemeCheck = document.querySelector('input[type=checkbox]#readerTheme');
 
 // Window Load
 window.addEventListener("load", (event) => {
@@ -40,15 +39,6 @@ readerModeCheck.addEventListener('change', event => {
   xReader.dataset.readerMode = modeName;
   localStorage.setItem('readerMode', modeName);
 });
-
-readerThemeCheck.addEventListener('change', event => {
-  let themeName = event.target.checked ? 'dark' : 'light';
-  document.documentElement.setAttribute('theme', themeName)
-  // document.body.classList.remove(event.target.checked ? 'light' : 'dark');
-  // document.body.classList.add(themeName);
-  localStorage.setItem('readerTheme', themeName);
-});
-
 
 function changeChapter(event) {
   let dataHash = {
@@ -105,8 +95,5 @@ function loadUserPreferences() {
   if (localStorage.readerMode) {
     localStorage.readerMode == 'infinite' ? readerModeCheck.checked = true : readerModeCheck.checked = false;
     xReader.dataset.readerMode = localStorage.readerMode;
-  }
-  if (localStorage.readerTheme) {
-    localStorage.readerTheme == 'dark' ? readerThemeCheck.checked = true : readerThemeCheck.checked = false;
   }
 }
