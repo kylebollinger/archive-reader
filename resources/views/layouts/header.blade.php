@@ -3,11 +3,16 @@
     <a class="logo" href="/" aria-label="Archive Reader">
       @include('partials.logo')
     </a>
-    <div class="switch input-group">
-      <div class="form-check form-switch switch-wrap">
-        <input class="form-check-input" type="checkbox" id="theme-toggle" data-theme-toggle>
-      </div>
+
+    <div class="switch switch--theme">
+      <input type="checkbox" id="theme" data-theme-toggle>
+      <label for="theme">
+        @include('partials.icons.sun')
+        @include('partials.icons.moon')
+        <div class="switch--ball"></div>
+      </label>
     </div>
+
   </nav>
 </header>
 
