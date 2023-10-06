@@ -317,3 +317,5 @@ font[color="green"] {
   @include light { color: $rose-500 !important; }
   @include dark { color: $rose-300 !important; }
 }
+
+.faux-button { width: 44px; }

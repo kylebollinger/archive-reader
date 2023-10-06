@@ -12,7 +12,6 @@ let readerModeCheck = document.querySelector('input[type=checkbox]#readerMode');
 window.addEventListener("load", (event) => {
   let dataHash = { book_id: bookID, chapter_id: chapterID };
   fetchChapter(urlHash.fetchChapter, dataHash);
-  loadUserPreferences();
 });
 
 // Chapter Pagination|Links
@@ -34,7 +33,7 @@ readerWidthRadios.forEach(radio => radio.addEventListener('change', function() {
   }
 ));
 
-readerModeCheck.addEventListener('change', event => {
+readerModeCheck?.addEventListener('change', event => {
   let modeName = event.target.checked ? 'infinite' : 'page';
   xReader.dataset.readerMode = modeName;
   localStorage.setItem('readerMode', modeName);
@@ -60,7 +59,6 @@ function setCurrentChapter(chapterId) {
 }
 
 function fetchChapter(url, data) {
-
   fetch(url, {
     method: 'POST',
     body: JSON.stringify(data),
@@ -81,19 +79,4 @@ function fetchChapter(url, data) {
       window.location.reload();
     }
   });
-}
-
-function loadUserPreferences() {
-  if (localStorage.readerWidth) {
-    readerWidthRadios.forEach(radio => {
-      if (radio.value == localStorage.readerWidth) {
-        radio.checked = true;
-        xReader.dataset.readerWidth = localStorage.readerWidth;
-      }
-    });
-  }
-  if (localStorage.readerMode) {
-    localStorage.readerMode == 'infinite' ? readerModeCheck.checked = true : readerModeCheck.checked = false;
-    xReader.dataset.readerMode = localStorage.readerMode;
-  }
 }
