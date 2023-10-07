@@ -41,6 +41,8 @@
 
   // Infinity Logo
 .header.header--global .logo {
+  display: flex;
+  align-items: center;
   transition: .2s ease-in-out transform;
   svg { height: 28px; width: auto; }
   &:hover { transform: scale(1.01); }
