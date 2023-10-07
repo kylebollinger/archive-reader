@@ -12,7 +12,6 @@
         <div class="switch--ball"></div>
       </label>
     </div>
-
   </nav>
 </header>
 

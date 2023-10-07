@@ -3,7 +3,7 @@
 @section('content')
 
 <section class="page">
-  <div class="container">
+  <div class="container-xxl">
     <section class="list">
       <h2 class="list-title">Category: {!! $category->name !!}</h2>
       <div class="grid-container books-grid">

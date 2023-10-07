@@ -4,7 +4,7 @@
 
 
 <section class="page">
-  <div class="container">
+  <div class="container-xxl">
     <section class="list">
       <h2 class="list-title">Catalog: {{ $letter }}</h2>
       <div class="grid-container books-grid">
