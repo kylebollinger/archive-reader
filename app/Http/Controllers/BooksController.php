@@ -44,7 +44,7 @@ class BooksController extends BaseController
     {
         $category = BookCategory::firstWhere('slug', $request->slug);
         if (isset($category->id) && count($category->books) > 1) {
-            $books = Book::where('category_id', $category->id)->state('completed')->paginate(12);
+            $books = Book::where('category_id', $category->id)->state('completed')->paginate(20);
             return view('books.categoryIndex', compact('category', 'books'));
         } else {
             return redirect()->route('books.index')->with('error', 'Unable to find that category');
