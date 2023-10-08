@@ -45,7 +45,7 @@ Developing a mobile-friendly reading solution for an archive of sacred texts, ad
 
 ## 📦 Features
 
-There app consists of 3 primary pages here:
+The app consists of 3 primary pages here:
 
 1. **Index page -** the homepage essentially where we display a portion of the catalog and allow a user to search and/or browse through the archive of texts.
 2. **Category page** - Another more refined list of texts within a certain category, topic, or alphabetical letter.
@@ -58,19 +58,13 @@ There app consists of 3 primary pages here:
 
 ```sh
 └── archive-reader/
-    ├── Procfile
-    ├── README.md
     ├── app/
     │   ├── Http/
     │   ├── Models/
     ├── bootstrap/
-    ├── composer.json
-    ├── composer.lock
     ├── config/
     ├── database/
     │   ├── migrations/
-    ├── package-lock.json
-    ├── package.json
     ├── resources/
     │   ├── js/
     │   ├── sass/
@@ -81,6 +75,12 @@ There app consists of 3 primary pages here:
     │   ├── app/
     │   ├── framework/
     │   └── logs/
+    ├── composer.json
+    ├── composer.lock
+    ├── package-lock.json
+    ├── package.json
+    ├── Procfile
+    ├── README.md
     └── webpack.mix.cjs
 ```
 
